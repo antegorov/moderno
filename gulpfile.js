@@ -41,7 +41,7 @@ function images() {
 
 function styleSas() {
     return src([
-            'app/scss/style.scss',
+            'app/scss/**/*.scss',
         ])
         .pipe(sass({ outputStyle: 'compressed' }))
         .pipe(concat('style.min.css'))
@@ -94,7 +94,7 @@ function build() {
 }
 
 function watching() {
-    watch(['app/scss/**/*style.scss'], styleSas)
+    watch(['app/scss/**/*.scss'], styleSas)
     watch(['app/js/**/*.js', '!app/js/libs.min.js'], scripts)
     watch(['app/*.html']).on('change', browserSync.reload);
 };
