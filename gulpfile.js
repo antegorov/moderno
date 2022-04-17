@@ -61,7 +61,7 @@ function styleLibs() {
             'node_modules/slick-carousel/slick/slick.css',
             'node_modules/magnific-popup/dist/magnific-popup.css',
             'node_modules/normalize.css/normalize.css',
-            'node_modules/rateyo/lib/es/rateyo.css',
+            'node_modules/rateyo/src/jquery.rateyo.css',
         ])
         .pipe(sass({ outputStyle: 'compressed' }))
         .pipe(concat('libs.min.css'))
@@ -73,12 +73,12 @@ function styleLibs() {
 
 function scripts() {
     return src([
+            /* jquery - всегда первый! (или без него) */
+            /* 'node_modules/jquery/dist/jquery.js', */
             'node_modules/slick-carousel/slick/slick.js',
             'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-            'node_modules/jquery/dist/jquery.js',
             'node_modules/mixitup/dist/mixitup.js',
-            'node_modules/rateyo/lib/es/rateyo.js',
-
+            'node_modules/rateyo/src/jquery.rateyo.js',
         ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
@@ -112,4 +112,4 @@ exports.images = images;
 exports.cleanDist = cleanDist;
 
 exports.build = series(cleanDist, images, build);
-exports.default = parallel(styleSas, scripts, styleLibs, browsersync, watching);
+exports.default = parallel(styleLibs, scripts, styleSas, watching, browsersync);

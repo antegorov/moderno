@@ -11,7 +11,6 @@
         "browser-sync": "^2.27.9",
         "cssmin": "^0.4.3",
         "del": "^6.0.0",
-        "dev-ip": "^1.0.1",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^8.0.0",
         "gulp-concat": "^2.6.1",
@@ -24,7 +23,7 @@
         "magnific-popup": "^1.1.0",
         "mixitup": "^3.3.1",
         "normalize.css": "^8.0.1",
-        "rateyo": "^3.0.0-alpha.2",
+        "rateyo": "^2.3.2",
         "sass": "^1.50.0",
         "slick-carousel": "^1.8.1"
     }
