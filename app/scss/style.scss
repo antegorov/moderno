@@ -74,13 +74,13 @@
     &-title {
         margin-bottom: 10px;
         font-size: 48px;
-        font-weight: 700;
+        @include fw700;
         line-height: 72px;
     }
     &-text {
         margin-bottom: 50px;
         font-size: 20px;
-        font-weight: 500;
+        @include fw500;
         line-height: 30px;
     }
     &-form {
@@ -95,12 +95,12 @@
             height: 56px;
             border: none;
             font-size: 14px;
-            font-weight: 500;
+            @include fw500;
             padding-left: 25px;
             padding-right: 60px;
             &::placeholder {
                 color: #90a4ae;
-                font-weight: 500;
+                @include fw500;
             }
         }
         button {
@@ -165,7 +165,7 @@
         padding: 10px 30px;
         min-height: 90px;
         align-items: center;
-        font-weight: 500;
+        @include fw500;
         border-bottom: 1px solid #e7ecf2;
     }
     &-name {
@@ -184,7 +184,7 @@
     &-price {
         font-size: 20px;
         color: $bg;
-        font-weight: 700;
+        @include fw700
     }
     &-info {
         display: flex;
@@ -209,7 +209,7 @@
         }
         span {
             font-size: 14px;
-            font-weight: 500;
+            @include fw500;
         }
     }
     &-star {
@@ -271,3 +271,59 @@
 }
 
 //end product-slider
+//start advantages
+//end advantages
+.advantages {
+    background-color: $bg;
+    padding: 110px 0;
+}
+
+.advantages__title {
+    color: #fff;
+}
+
+.advantages__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.advantages__item {
+    max-width: 370px;
+    text-align: center;
+    padding: 0 15px;
+    &:hover {
+        .advantages__item-images {
+            background-color: $green;
+            svg {
+                fill: #fff;
+            }
+        }
+        .advantages__item-title {
+            color: $green;
+        }
+    }
+    &-images {
+        width: 115px;
+        height: 115px;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 30px;
+        transition: all .5s;
+        & svg {
+            width: 90px;
+        }
+    }
+    &-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+        color: #fff;
+        @include fw500;
+        transition: all .5s;
+    }
+    &-text {
+        color: $advent;
+    }
+}
