@@ -2,6 +2,7 @@
 @import 'global';
 @import 'fonts';
 
+
 //start header
 .header__top-inner {
   display: flex;
@@ -32,7 +33,8 @@
   background-color: $green;
 }
 
-.header__btn-register {
+.header__btn-register,
+.header__btn-logout {
   background-color: $red;
   margin-left: 7px;
 }
@@ -62,7 +64,419 @@
   }
 }
 
+
+.header__circle {
+  &.active {
+    display: block;
+  }
+
+  display: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #a0a0a0;
+    font-size: 14px;
+  }
+
+  span {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+    right: -7px;
+    top: -7px;
+    font-size: 11px;
+    color: #fff;
+  }
+}
+
+.header__box {
+  display: flex;
+  align-items: center;
+}
+
+.notification {
+  span {
+    background-color: $yellow;
+  }
+}
+
+.message {
+  span {
+    background-color: $tomato;
+  }
+}
+
+.basket {
+  margin-right: 20px;
+
+  span {
+    background-color: $green;
+  }
+}
+
+.header__btn-login--off {
+  display: none;
+}
+
+.header__btn-logout {
+  display: none;
+
+  &.header__btn-login--on {
+    display: block;
+  }
+}
+
+.user {
+  margin-right: 25px;
+  padding-right: 20px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "\f107";
+    font-family: 'icomoon';
+    font-size: 16px;
+    color: #707070;
+    top: 0;
+    right: 0;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+
+  }
+
+  &__images {
+    margin-right: 15px;
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  &__info {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  &__name {
+    @include fw500;
+    color: #222;
+  }
+
+  &__money {
+    color: $green;
+    @include fw700;
+  }
+}
+
+.user__menu {
+  position: absolute;
+  top: 69px;
+  left: 20px;
+  border: 0 solid #ccc;
+  background-color: #fff;
+  padding: 0px 20px;
+  width: 158px;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  height: 0;
+  overflow: hidden;
+
+  a {
+    font-size: 12px;
+    color: #546e7a;
+    margin-bottom: 15px;
+  }
+}
+
+.circle__menu {
+  position: absolute;
+  top: 69px;
+  z-index: 1;
+}
+
+.user__box,
+.basket__box,
+.notification__box,
+.message__box {
+  position: relative;
+  margin-top: 40px;
+  height: 90px;
+
+  &:hover {
+    .user__menu {
+      height: auto;
+      border-width: 1px;
+      padding: 20px;
+      overflow: auto;
+    }
+  }
+}
+
+.circle__menu {
+  border-top: 1px solid #e0e0e0;
+  top: 62px;
+  right: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all .3s;
+}
+
+.basket__box,
+.notification__box,
+.message__box {
+  margin-top: 54px;
+  margin-left: 15px;
+
+  &:hover {
+    .header__circle::before {
+      color: $bg;
+    }
+
+    .circle__menu {
+      overflow: hidden;
+      height: auto;
+    }
+
+    .circle__item {
+      padding: 23px 23px;
+      border-width: 1px;
+    }
+  }
+}
+
+.circle__item {
+  background-color: #fff;
+  border: 0 solid #e0e0e0;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-top: none;
+  padding: 0 23px;
+  display: flex;
+  align-items: center;
+  width: 269px;
+  transition: all .3s;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 27px;
+    right: 28px;
+    color: #b0bec5;
+    font-size: 16px;
+  }
+}
+
+.circle__images {
+  margin-right: 15px;
+}
+
+.circle__info {
+  &-name {
+    @include fw500;
+    color: $bg;
+  }
+
+  &-thema {
+    font-size: 12px;
+    color: $green
+  }
+
+  &-price {
+    @include fw500;
+    color: #000;
+    font-size: 16px;
+  }
+
+  &-data {
+    color: #707070;
+    font-size: 10px;
+  }
+}
+
+.basket__summ {
+  padding: 16px 17px 12px;
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  background-color: #fff;
+}
+
+.basket__title {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 13px;
+  padding-right: 22px;
+  margin-bottom: 15px;
+  @include fw700;
+  font-size: 16px;
+  color: $bg;
+}
+
+.basket__btn {
+  @include fw700;
+  color: #fff;
+  font-size: 14px;
+  padding: 12px 5px;
+  background-color: $green;
+  text-align: center;
+  width: 99px;
+}
+
+.basket__btn-checkout {
+  width: 123px;
+  background-color: $red;
+  margin-left: 6px;
+}
+
+.notification__menu,
+.message__menu {
+  .circle__images {
+    margin-right: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+}
+
+.circle__info {
+  line-height: 18px;
+}
+
+.icons-color::before {
+  color: $tomato;
+}
+
+.header__btn-menu,
+.menu__btn {
+  display: none;
+}
+
+
 //end header
+//start modal
+
+#modal {
+  background-color: $green;
+  max-width: 730px;
+  width: 100%;
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+
+.login__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 48px;
+  margin-bottom: 40px;
+  color: #fff;
+  @include fw700;
+}
+
+.login__wrapper {
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  label {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    &::before {
+      position: absolute;
+      font-family: 'icomoon';
+      font-size: 14px;
+      color: #fff;
+      left: 18px;
+      top: 9px;
+    }
+  }
+
+  .login-label-name::before {
+    content: "\f007";
+  }
+
+  .login-label-pass::before {
+    content: "\f023";
+  }
+
+  input {
+    height: 43px;
+    margin-bottom: 8px;
+    border: none;
+    background-color: #76ae36;
+    color: #fff;
+    font-size: 14px;
+    padding-left: 40px;
+    display: block;
+    width: 100%;
+
+    &::placeholder {
+      color: #fff;
+      font-size: 14px;
+    }
+  }
+
+  button {
+    margin-top: 19px;
+    width: 140px;
+    padding: 18px 0 16px;
+    background-color: #fff;
+    @include fw700;
+    text-transform: uppercase;
+    border: none;
+    margin-right: 10px;
+    color: #000;
+    text-align: center;
+    box-shadow: 0px 2px 2px 0px rgba(118, 174, 54, 0.75);
+  }
+}
+
+.lost-pass {
+  display: block;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.create-acc {
+  margin-top: 19px;
+  width: 245px;
+  text-align: center;
+  padding: 15px 0 15px 28px;
+  background-color: #76ae36;
+  color: #fff;
+  font-size: 18px;
+  position: relative;
+  &::before{
+    font-family: 'icomoon';
+    content: '\f044';
+    position: absolute;
+    top: 15px;
+    left: 35px;
+  }
+}
+
+.fancybox-button svg path{
+  color: #fff;
+}
+
+//end modal
 //start search
 .search {
   background-repeat: no-repeat;
@@ -125,17 +539,8 @@
   }
 }
 
-.header__circle{
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background-color: #f5f5f5;
-  & + .header__circle{
-    margin-left: 15px;
-  }
-}
 
-//end header
+//end search
 //start products
 .products {
   padding: 110px 0;
@@ -555,7 +960,8 @@
 
   li {
     display: inline-block;
-    & + li{
+
+    & + li {
       margin-left: 7px;
     }
   }
@@ -583,15 +989,17 @@
   background-position: -56px -0;
 }
 
-.footer__form-title{
+.footer__form-title {
   font-size: 20px;
   color: #fff;
   margin-bottom: 15px;
 
 }
-.footer__form{
+
+.footer__form {
   position: relative;
-  input{
+
+  input {
     background-color: #2f3c43;
     border: none;
     display: block;
@@ -600,11 +1008,13 @@
     color: #fff;
     padding-left: 13px;
     padding-right: 50px;
-    &::placeholder{
-      color: #697378;  
+
+    &::placeholder {
+      color: #697378;
     }
   }
-  button{
+
+  button {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -613,7 +1023,8 @@
     height: 40px;
     width: 43px;
     cursor: pointer;
-    &::before{
+
+    &::before {
       content: '\f124';
       position: absolute;
       font-family: 'icomoon';
@@ -626,3 +1037,33 @@
 }
 
 //end footer
+/* .page-content{
+  height : 300px;
+} */
+//start wrapper
+.price-range {
+  form {
+    padding-top: 28px;
+  }
+
+  button {
+    margin-top: 55px;
+    padding: 16px 10px;
+    background-color: $green;
+    text-align: center;
+    color: #fff;
+    @include fw500;
+    width: 100%;
+    display: block;
+    border: none;
+    cursor: pointer;
+    position: relative;
+  }
+}
+
+
+
+
+
+
+@import 'media';

@@ -28,14 +28,133 @@
             </a> Talk to an expert:
             <a class="header__phone" href="tel:61383766284"> +61 3 8376 6284 </a>
           </div>
-          <div class="header__box">
-            <a class="notification header__circle" href="#"></a>
-            <a class="message header__circle" href="#"></a>
-            <a class="basket header__circle" href="#"></a>
-            <a class="user header__circle" href="#"></a>
-            <a class="header__btn header__btn-login" href="#">Login</a>
+
+          <div class="header__box ">
+            <div class="notification__box header__btn-login--off">
+              <a class="notification header__circle active icon-bell-o" href="#">
+                <span>8</span>
+              </a>
+              <div class="notification__menu circle__menu">
+                <a href="#" class="circle__item icon-bell-o icons-color">
+                  <img class="circle__images" src="images/content/message.jpg" alt="">
+                  <div class="circle__info">
+                    <div class="circle__info-thema">WordPress</div>
+                    <div class="circle__info-data">01 Dec, 2016</div>
+                  </div>
+                </a>
+                <a href="#" class="circle__item icon-bell-o">
+                  <img class="circle__images" src="images/content/message.jpg" alt="">
+                  <div class="circle__info">
+                    <div class="circle__info-thema">WordPress</div>
+                    <div class="circle__info-data">01 Dec, 2016</div>
+                  </div>
+                </a>
+                <a href="#" class="circle__item icon-bell-o">
+                  <img class="circle__images" src="images/content/message.jpg" alt="">
+                  <div class="circle__info">
+                    <div class="circle__info-thema">WordPress</div>
+                    <div class="circle__info-data">01 Dec, 2016</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="message__box header__btn-login--off">
+              <a class="message header__circle active icon-envelope-o" href="#">
+                <span>5</span>
+              </a>
+              <div class="message__menu circle__menu">
+                <a href="#" class="circle__item icon-envelope-o icons-color">
+                  <img class="circle__images" src="images/content/message.jpg" alt="">
+                  <div class="circle__info">
+                    <div class="circle__info-name">Kazi Fahim</div>
+                    <div class="circle__info-thema">WordPress</div>
+                    <div class="circle__info-data">01 Dec, 2016</div>
+                  </div>
+                </a>
+                <a href="#" class="circle__item icon-envelope-o">
+                  <img class="circle__images" src="images/content/message.jpg" alt="">
+                  <div class="circle__info">
+                    <div class="circle__info-name">Kazi Fahim</div>
+                    <div class="circle__info-thema">WordPress</div>
+                    <div class="circle__info-data">01 Dec, 2016</div>
+                  </div>
+                </a>
+                <a href="#" class="circle__item icon-undo2">
+                  <img class="circle__images" src="images/content/message.jpg" alt="">
+                  <div class="circle__info">
+                    <div class="circle__info-name">Kazi Fahim</div>
+                    <div class="circle__info-thema">WordPress</div>
+                    <div class="circle__info-data">01 Dec, 2016</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="basket__box">
+              <a class="basket header__circle active icon-shopping-cart" href="#">
+                <span>8</span>
+              </a>
+              <div class="circle__menu">
+                <div class="circle__item">
+                  <img class="circle__images" src="images/content/basket.png" alt="">
+                  <div class="circle__info">
+                    <div class="circle__info-name">Grand Ballet</div>
+                    <div class="circle__info-thema">WordPress</div>
+                    <div class="circle__info-price">$59</div>
+                  </div>
+                </div>
+                <div class="circle__item">
+                  <img class="circle__images" src="images/content/basket.png" alt="">
+                  <div class="circle__info">
+                    <div class="circle__info-name">Grand Ballet</div>
+                    <div class="circle__info-thema">WordPress</div>
+                    <div class="circle__info-price">$59</div>
+                  </div>
+                </div>
+                <div class="basket__summ">
+                  <div class="basket__title">
+                    <div class="basket__summ-total">Total</div>
+                    <div class="basket__summ-price">$118</div>
+                  </div>
+                  <a class="basket__btn" href="#">Go to Cart</a>
+                  <a class="basket__btn basket__btn-checkout" href="#">Go to Checkout</a>
+                </div>
+              </div>
+            </div>
+            <div class="user__box header__btn-login--off">
+              <a class="user" href="#">
+                <div class="user__inner">
+                  <div class="user__images">
+                    <img src="images/content/user-login.jpg" alt="">
+                  </div>
+                  <div class="user__info">
+                    <div class="user__name">
+                      Mike Hussy
+                    </div>
+                    <div class="user__money">
+                      $171.00
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="user__menu">
+                <ul>
+                  <li><a class="angle-right" href="#">Profile Page</a></li>
+                  <li><a class="angle-right" href="#">Portfolio</a></li>
+                  <li><a class="angle-right" href="#">Account Setting</a></li>
+                  <li><a class="angle-right" href="#">Downloads</a></li>
+                  <li><a class="angle-right" href="#">Wishlist</a></li>
+                  <li><a class="angle-right" href="#">Upload Item</a></li>
+                  <li><a class="angle-right" href="#">Statement</a></li>
+                  <li><a class="angle-right" href="#">Withdraws</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <a class="header__btn header__btn-login" data-fancybox data-src="#modal" href="javascript:;">Login</a>
+            <a class="header__btn header__btn-logout header__btn-login--off " href="#">Logout</a>
             <a class="header__btn header__btn-register" href="#">Register</a>
           </div>
+          <div class="header__btn-menu icon-user"></div>
         </div>
       </div>
     </div>
@@ -43,6 +162,11 @@
     <div class="header__menu">
       <div class="container">
         <nav class="menu">
+          <div class="menu__btn">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
           <ul class="menu__list">
             <li>
               <a href="#">Home</a>
@@ -870,7 +994,7 @@
     <div class="footer__content">
       <div class="container">
         <div class="footer__inner">
-          <div class="footer__col">
+          <div class="footer__col footer__col-adress">
             <div class="footer__col-title">About Company</div>
             <div class="footer__col-text">
               Praesent vel rutrum purus. Nam vel dui eu risus duis dignissim digniSuspen disse.Fusce sit amet urna
@@ -923,7 +1047,7 @@
               </li>
             </ul>
           </div>
-          <div class="footer__col">
+          <div class="footer__col footer__col-social">
             <div class="footer__col-title">Follow Us On</div>
             <ul class="footer__social-link">
               <li>
@@ -963,6 +1087,25 @@
       </div>
     </div>
   </footer>
+
+  <div id="modal">
+    <div class="login__wrapper">
+      <div class="login__title">
+        Login
+      </div>
+      <form>
+        <label class="login-label-name">
+          <input type="text" placeholder="Name" required>
+        </label>
+        <label class="login-label-pass">
+          <input type="text" placeholder="Password" required>
+        </label>
+        <button type="submit">Submit</button>
+        <a class="create-acc" href="#">Creat An Account?</a>
+        <a class="lost-pass" href="#">Lost Password?</a>
+      </form>
+    </div>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="js/libs.min.js"></script>
