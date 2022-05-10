@@ -27,5 +27,8 @@
         "rateyo": "^2.3.2",
         "sass": "^1.50.0",
         "slick-carousel": "^1.8.1"
+    },
+    "dependencies": {
+        "ion-rangeslider": "^2.3.1"
     }
 }
